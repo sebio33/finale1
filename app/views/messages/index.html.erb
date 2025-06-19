@@ -1,0 +1,14 @@
+<h1>Messages</h1>
+<table class="table table-striped">
+  <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
+  <tbody>
+    <% Message.includes(:sender, :receiver).each do |m| %>
+      <tr>
+        <td><%= m.sender.email %></td>
+        <td><%= m.receiver.email %></td>
+        <td><%= m.subject %></td>
+        <td><%= m.sent_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+<h1>Assignments</h1>
+<table class="table table-striped">
+  <thead><tr><th>Title</th><th>Course</th><th>Due Date</th></tr></thead>
+  <tbody>
+    <% Assignment.includes(:course).each do |a| %>
+      <tr><td><%= a.title %></td><td><%= a.course.title %></td><td><%= a.due_date %></td></tr>
+    <% end %>
+  </tbody>
+</table>

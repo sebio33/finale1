@@ -1,0 +1,19 @@
+<h1>Submissions</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Assignment</th>
+      <th>Submitted At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Submission.all.each do |s| %>
+      <tr>
+        <td><%= s.student&.user&.email || "N/A" %></td>
+        <td><%= s.assignment&.title || "N/A" %></td>
+        <td><%= s.submitted_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

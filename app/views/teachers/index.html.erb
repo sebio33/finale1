@@ -1,0 +1,9 @@
+<h1>Teachers</h1>
+<table class="table table-striped">
+  <thead><tr><th>Email</th><th>Department</th></tr></thead>
+  <tbody>
+    <% Teacher.includes(:user).each do |teacher| %>
+      <tr><td><%= teacher.user.email %></td><td><%= teacher.department %></td></tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+<h1>Projects</h1>
+<table class="table table-striped">
+  <thead><tr><th>Student</th><th>Title</th><th>Approved</th></tr></thead>
+  <tbody>
+    <% Project.includes(:student => :user).each do |p| %>
+      <tr><td><%= p.student.user.email %></td><td><%= p.title %></td><td><%= p.approved ? 'Yes' : 'No' %></td></tr>
+    <% end %>
+  </tbody>
+</table>

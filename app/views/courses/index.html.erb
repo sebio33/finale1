@@ -1,0 +1,7 @@
+<h1>Welcome to Académie Numérique</h1>
+
+<ul>
+  <% @courses.each do |course| %>
+    <li><%= course.title %> (<%= course.code %>)</li>
+  <% end %>
+</ul>

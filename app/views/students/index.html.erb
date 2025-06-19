@@ -1,0 +1,19 @@
+<h1>Students</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Student Number</th>
+      <th>Grade Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Student.includes(:user).each do |student| %>
+      <tr>
+        <td><%= student.user.email %></td>
+        <td><%= student.student_number %></td>
+        <td><%= student.grade_level %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

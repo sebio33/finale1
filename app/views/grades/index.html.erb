@@ -1,0 +1,13 @@
+<h1>Grades</h1>
+<table class="table table-striped">
+  <thead><tr><th>Student</th><th>Assignment</th><th>Score</th></tr></thead>
+  <tbody>
+    <% Grade.includes(:submission => [:student, :assignment]).each do |g| %>
+      <tr>
+        <td><%= g.submission.student.user.email %></td>
+        <td><%= g.submission.assignment.title %></td>
+        <td><%= g.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
